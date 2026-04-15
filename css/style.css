@@ -1,0 +1,129 @@
+/* TOP-BAR */
+.hero-section {
+    background-color: var(--marron);
+}
+
+header a button:hover {
+    background-color: var(--cinza);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+nav .menu-icon {
+    display: none;
+    z-index: 1;
+}
+
+.logo h1 {
+    font-size: 3rem;
+    font-weight: 200;
+
+}
+
+.menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.menu .nav-link {
+    color: var(--bege);
+    position: relative;
+}
+
+.menu .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--bege);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease
+}
+
+.menu .nav-link:hover {
+    color: var(--cinza);
+}
+
+.menu .nav-link:hover::after {
+    width: 100%;
+    color: var(--cinza);
+}
+
+/* MAIN */
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+
+}
+
+.box-left {
+    max-width: 50%;
+    padding-right: 5%;
+}
+
+.box-left h1 {
+    font-size: 3.5rem;
+    color: var(--bege);
+}
+
+.box-button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 5%;
+}
+
+.box-right {
+    max-width: 50%;
+}
+
+.box-right img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* SECTION RESULTADOS */
+.resultados {
+    background: var(--bege);
+    color: var(--marron);
+}
+
+.resultados .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+}
+
+.resultados .container .resultado-text,
+.resultados .container .resultado-numeros {
+    min-width: 50%;
+}
+
+.resultados .container .resultado-text {
+    font-size: 1.5rem;
+}
+
+.resultados .container .resultado-numeros {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    text-align: center;
+}
+
+.resultados .container .resultado-numeros p {
+    font-size: 1rem;
+}
+
+.resultados .container .resultado-numeros p span {
+    font-size: 1.5rem;
+}
