@@ -39,3 +39,8 @@ section{
     background-color: var(--salmao);
     cursor: pointer;
 }
+
+.btn-primary:hover{
+    background-color: var(--cinza);
+    border: 2px solid var(--marron)
+}
