@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Casa - WStudio</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <style>
+        .tipos-hero {
+            background-color: var(--marron);
+            padding: 3rem 0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+        }
+
+        .tipos-hero h1 {
+            font-size: 3rem;
+            color: var(--bege);
+            margin-bottom: 1rem;
+        }
+
+        .tipos-hero p {
+            font-size: 1.1rem;
+            color: var(--cinza);
+            line-height: 1.8;
+        }
+
+        .tipos-container {
+            background-color: var(--marron);
+            padding: 3rem 0;
+        }
+
+        .tipos-container .title {
+            color: var(--bege);
+            font-size: 2rem;
+            margin-left: 5%;
+            margin-bottom: 2rem;
+        }
+
+        .tipos-container .title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--bege);
+            margin: 5px 0 10px 0;
+        }
+
+        .tipos-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .tipo-card {
+            background-color: var(--salmao);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .tipo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tipo-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .tipo-info {
+            padding: 2rem;
+            color: var(--cinza);
+        }
+
+        .tipo-info h3 {
+            font-size: 1.5rem;
+            color: var(--marron);
+            margin-bottom: 1rem;
+        }
+
+        .tipo-info p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .tipo-specs {
+            background-color: rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .tipo-specs ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tipo-specs li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .tipo-specs li:last-child {
+            border-bottom: none;
+        }
+
+        .tipo-specs li::before {
+            content: "✓ ";
+            color: var(--marron);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .tipo-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--marron);
+            margin-bottom: 1rem;
+        }
+
+        .tipo-card .btn-primary {
+            width: 100%;
+        }
+
+        .comparacao {
+            background-color: var(--marron);
+            padding: 3rem 0;
+        }
+
+        .comparacao .title {
+            color: var(--bege);
+            font-size: 2rem;
+            margin-left: 5%;
+            margin-bottom: 2rem;
+        }
+
+        .comparacao .title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--bege);
+            margin: 5px 0 10px 0;
+        }
+
+        .tabela-comparacao {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--salmao);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tabela-comparacao th,
+        .tabela-comparacao td {
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            color: var(--cinza);
+        }
+
+        .tabela-comparacao th {
+            background-color: var(--marron);
+            color: var(--bege);
+            font-weight: 600;
+        }
+
+        .tabela-comparacao tr:last-child td {
+            border-bottom: none;
+        }
+
+        .tabela-comparacao td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--marron);
+        }
+
+        .checkmark {
+            color: var(--marron);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .tipos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tabela-comparacao {
+                font-size: 0.9rem;
+            }
+
+            .tabela-comparacao th,
+            .tabela-comparacao td {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero-section">
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <h1>WStudio</h1>
+                    </div>
+                    <ul class="menu">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                        <li><a href="tipos-de-casa.html" class="nav-link">Tipos de Casa</a></li>
+                        <li><a href="contato.html" class="nav-link">Contato</a></li>
+                        <li><a href="contato.html"> <button class="btn-primary">Começar</button> </a></li>
+                    </ul>
+
+                    <div class="menu-icon">
+                        <img src="imgs/menu.png" alt="Icone Hamburguer do menu">
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <section class="tipos-hero">
+        <div class="container">
+            <h1>Tipos de Casa</h1>
+            <p>
+                Conheça os diferentes modelos de casas que oferecemos. Cada projeto é 
+                cuidadosamente planejado para atender às necessidades e sonhos de nossas famílias.
+            </p>
+        </div>
+    </section>
+
+    <section class="tipos-container">
+        <h2 class="title">Nossos Modelos</h2>
+        <div class="container">
+            <div class="tipos-grid">
+                <div class="tipo-card">
+                    <img src="imgs/casa1.jpg" alt="Casa Compacta">
+                    <div class="tipo-info">
+                        <h3>Casa Compacta</h3>
+                        <p>
+                            Perfeita para casais ou pequenas famílias que buscam praticidade 
+                            e funcionalidade sem abrir mão da qualidade.
+                        </p>
+                        <div class="tipo-specs">
+                            <ul>
+                                <li>2 quartos</li>
+                                <li>1 banheiro</li>
+                                <li>Sala integrada</li>
+                                <li>Cozinha planejada</li>
+                                <li>Garagem para 1 carro</li>
+                                <li>Área: 80m²</li>
+                            </ul>
+                        </div>
+                        <div class="tipo-price">A partir de R$ 350.000</div>
+                        <a href="contato.html"><button class="btn-primary">Solicitar Informações</button></a>
+                    </div>
+                </div>
+
+                <div class="tipo-card">
+                    <img src="imgs/casa2.jpg" alt="Casa Padrão">
+                    <div class="tipo-info">
+                        <h3>Casa Padrão</h3>
+                        <p>
+                            O modelo mais procurado, com espaço generoso para famílias em crescimento. 
+                            Combina conforto, funcionalidade e design moderno.
+                        </p>
+                        <div class="tipo-specs">
+                            <ul>
+                                <li>3 quartos (1 suíte)</li>
+                                <li>2 banheiros</li>
+                                <li>Sala de estar</li>
+                                <li>Sala de jantar</li>
+                                <li>Cozinha planejada</li>
+                                <li>Garagem para 2 carros</li>
+                                <li>Área: 150m²</li>
+                            </ul>
+                        </div>
+                        <div class="tipo-price">A partir de R$ 556.000</div>
+                        <a href="contato.html"><button class="btn-primary">Solicitar Informações</button></a>
+                    </div>
+                </div>
+
+                <div class="tipo-card">
+                    <img src="imgs/casa3.jpg" alt="Casa Premium">
+                    <div class="tipo-info">
+                        <h3>Casa Premium</h3>
+                        <p>
+                            Luxo e sofisticação para quem busca o melhor. Acabamentos premium, 
+                            espaços amplos e áreas de lazer exclusivas.
+                        </p>
+                        <div class="tipo-specs">
+                            <ul>
+                                <li>4 quartos (2 suítes)</li>
+                                <li>3 banheiros + lavabo</li>
+                                <li>Sala de estar</li>
+                                <li>Sala de jantar</li>
+                                <li>Cozinha gourmet</li>
+                                <li>Home office</li>
+                                <li>Garagem para 3 carros</li>
+                                <li>Área: 250m²</li>
+                            </ul>
+                        </div>
+                        <div class="tipo-price">A partir de R$ 950.000</div>
+                        <a href="contato.html"><button class="btn-primary">Solicitar Informações</button></a>
+                    </div>
+                </div>
+
+                <div class="tipo-card">
+                    <img src="imgs/casa4.jpg" alt="Casa Condomínio">
+                    <div class="tipo-info">
+                        <h3>Casa em Condomínio</h3>
+                        <p>
+                            Segurança, comodidade e comunidade. Casas em condomínios fechados com 
+                            infraestrutura completa e áreas de convivência.
+                        </p>
+                        <div class="tipo-specs">
+                            <ul>
+                                <li>3 quartos (1 suíte)</li>
+                                <li>2 banheiros + lavabo</li>
+                                <li>Área gourmet</li>
+                                <li>Churrasqueira</li>
+                                <li>Segurança 24h</li>
+                                <li>Piscina e academia</li>
+                                <li>Garagem para 2 carros</li>
+                                <li>Área: 180m²</li>
+                            </ul>
+                        </div>
+                        <div class="tipo-price">A partir de R$ 650.000</div>
+                        <a href="contato.html"><button class="btn-primary">Solicitar Informações</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparacao">
+        <h2 class="title">Comparação de Modelos</h2>
+        <div class="container">
+            <table class="tabela-comparacao">
+                <thead>
+                    <tr>
+                        <th>Características</th>
+                        <th>Compacta</th>
+                        <th>Padrão</th>
+                        <th>Premium</th>
+                        <th>Condomínio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Quartos</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>Banheiros</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <td>Suítes</td>
+                        <td>-</td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>Garagem</td>
+                        <td>1 carro</td>
+                        <td>2 carros</td>
+                        <td>3 carros</td>
+                        <td>2 carros</td>
+                    </tr>
+                    <tr>
+                        <td>Área Gourmet</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="checkmark">✓</span></td>
+                        <td><span class="checkmark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Home Office</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="checkmark">✓</span></td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Segurança 24h</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="checkmark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Piscina</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td><span class="checkmark">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Área Total</td>
+                        <td>80m²</td>
+                        <td>150m²</td>
+                        <td>250m²</td>
+                        <td>180m²</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h3>WStudio</h3>
+                    <p>Realizando sonhos através de espaços únicos e aconchegantes.</p>
+                </div>
+                <div class="footer-box">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="tipos-de-casa.html">Tipos de Casa</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h3>Contato</h3>
+                    <p>contato@wstudio.com</p>
+                    <p>(11) 99999-9999</p>
+                    <div class="social-icons">
+                        <span>Instagram</span> | <span>Facebook</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WStudio. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

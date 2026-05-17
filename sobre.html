@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - WStudio</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <style>
+        .sobre-hero {
+            background-color: var(--marron);
+            padding: 3rem 0;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+        }
+
+        .sobre-hero .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .sobre-hero .box-left {
+            flex: 1;
+        }
+
+        .sobre-hero h1 {
+            font-size: 3rem;
+            color: var(--bege);
+            margin-bottom: 1rem;
+        }
+
+        .sobre-hero p {
+            font-size: 1.1rem;
+            color: var(--cinza);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .sobre-hero .box-right {
+            flex: 1;
+        }
+
+        .sobre-hero img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .missao-visao {
+            background-color: var(--marron);
+            padding: 3rem 0;
+        }
+
+        .missao-visao .title {
+            color: var(--bege);
+            font-size: 2rem;
+            margin-left: 5%;
+            margin-bottom: 2rem;
+        }
+
+        .missao-visao .title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--bege);
+            margin: 5px 0 10px 0;
+        }
+
+        .missao-visao .container {
+            display: flex;
+            gap: 3rem;
+            justify-content: space-between;
+        }
+
+        .missao-box,
+        .visao-box {
+            flex: 1;
+            background-color: var(--salmao);
+            padding: 2rem;
+            border-radius: 10px;
+            color: var(--cinza);
+        }
+
+        .missao-box h3,
+        .visao-box h3 {
+            font-size: 1.5rem;
+            color: var(--marron);
+            margin-bottom: 1rem;
+        }
+
+        .missao-box p,
+        .visao-box p {
+            line-height: 1.8;
+            font-size: 1rem;
+        }
+
+        .valores {
+            background-color: var(--marron);
+            padding: 3rem 0;
+        }
+
+        .valores .title {
+            color: var(--bege);
+            font-size: 2rem;
+            margin-left: 5%;
+            margin-bottom: 2rem;
+        }
+
+        .valores .title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--bege);
+            margin: 5px 0 10px 0;
+        }
+
+        .valores .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .valor-item {
+            text-align: center;
+            padding: 2rem;
+            background-color: var(--salmao);
+            border-radius: 10px;
+            color: var(--cinza);
+        }
+
+        .valor-item h4 {
+            font-size: 1.3rem;
+            color: var(--marron);
+            margin-bottom: 1rem;
+        }
+
+        .valor-item p {
+            line-height: 1.6;
+        }
+
+        .equipe {
+            background-color: var(--marron);
+            padding: 3rem 0;
+        }
+
+        .equipe .title {
+            color: var(--bege);
+            font-size: 2rem;
+            margin-left: 5%;
+            margin-bottom: 2rem;
+        }
+
+        .equipe .title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background-color: var(--bege);
+            margin: 5px 0 10px 0;
+        }
+
+        .equipe .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .membro {
+            background-color: var(--salmao);
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            color: var(--cinza);
+        }
+
+        .membro img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .membro-info {
+            padding: 1.5rem;
+        }
+
+        .membro-info h4 {
+            font-size: 1.2rem;
+            color: var(--marron);
+            margin-bottom: 0.5rem;
+        }
+
+        .membro-info p {
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .sobre-hero .container {
+                flex-direction: column;
+            }
+
+            .missao-visao .container {
+                flex-direction: column;
+            }
+
+            .valores .container {
+                grid-template-columns: 1fr;
+            }
+
+            .equipe .container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hero-section">
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <h1>WStudio</h1>
+                    </div>
+                    <ul class="menu">
+                        <li><a href="index.html" class="nav-link">Início</a></li>
+                        <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+                        <li><a href="tipos-de-casa.html" class="nav-link">Tipos de Casa</a></li>
+                        <li><a href="contato.html" class="nav-link">Contato</a></li>
+                        <li><a href="contato.html"> <button class="btn-primary">Começar</button> </a></li>
+                    </ul>
+
+                    <div class="menu-icon">
+                        <img src="imgs/menu.png" alt="Icone Hamburguer do menu">
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+
+    <section class="sobre-hero">
+        <div class="container">
+            <div class="box-left">
+                <h1>Sobre a WStudio</h1>
+                <p>
+                    A WStudio é uma construtora com mais de 20 anos de experiência no mercado imobiliário. 
+                    Somos especialistas em criar espaços únicos, funcionais e aconchegantes que transformam 
+                    vidas e realizam sonhos. Com uma equipe dedicada e comprometida, entregamos projetos 
+                    de qualidade excepcional que combinam design inovador com sustentabilidade.
+                </p>
+                <p>
+                    Nosso compromisso é com a excelência em cada detalhe, desde o planejamento inicial até 
+                    a entrega final. Acreditamos que um lar é muito mais que uma construção; é um refúgio 
+                    onde as melhores memórias são criadas.
+                </p>
+            </div>
+            <div class="box-right">
+                <img src="imgs/casa-destaque.jpg" alt="Sobre WStudio">
+            </div>
+        </div>
+    </section>
+
+    <section class="missao-visao">
+        <h2 class="title">Missão e Visão</h2>
+        <div class="container">
+            <div class="missao-box">
+                <h3>Nossa Missão</h3>
+                <p>
+                    Construir espaços que inspiram e transformam a vida das pessoas, 
+                    oferecendo soluções imobiliárias de qualidade superior com atendimento 
+                    personalizado e inovação constante.
+                </p>
+            </div>
+            <div class="visao-box">
+                <h3>Nossa Visão</h3>
+                <p>
+                    Ser reconhecida como a construtora mais confiável e inovadora do mercado, 
+                    referência em qualidade, sustentabilidade e satisfação do cliente, 
+                    criando comunidades onde as pessoas desejam viver.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="valores">
+        <h2 class="title">Nossos Valores</h2>
+        <div class="container">
+            <div class="valor-item">
+                <h4>Qualidade</h4>
+                <p>
+                    Comprometidos com a excelência em cada projeto, utilizando os melhores 
+                    materiais e técnicas construtivas.
+                </p>
+            </div>
+            <div class="valor-item">
+                <h4>Integridade</h4>
+                <p>
+                    Transparência e honestidade em todas as nossas relações com clientes, 
+                    parceiros e colaboradores.
+                </p>
+            </div>
+            <div class="valor-item">
+                <h4>Inovação</h4>
+                <p>
+                    Buscamos constantemente novas soluções e tecnologias para melhorar 
+                    nossos projetos e serviços.
+                </p>
+            </div>
+            <div class="valor-item">
+                <h4>Sustentabilidade</h4>
+                <p>
+                    Construímos com responsabilidade ambiental, pensando no futuro 
+                    e no bem-estar do planeta.
+                </p>
+            </div>
+            <div class="valor-item">
+                <h4>Respeito</h4>
+                <p>
+                    Valorizamos cada pessoa e comunidade, respeitando suas necessidades 
+                    e aspirações.
+                </p>
+            </div>
+            <div class="valor-item">
+                <h4>Comprometimento</h4>
+                <p>
+                    Dedicados a entregar projetos no prazo e dentro do orçamento, 
+                    sempre com excelência.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="equipe">
+        <h2 class="title">Nossa Equipe</h2>
+        <div class="container">
+            <div class="membro">
+                <img src="imgs/user-happy.png" alt="Diretor Executivo">
+                <div class="membro-info">
+                    <h4>Carlos Silva</h4>
+                    <p>Diretor Executivo</p>
+                </div>
+            </div>
+            <div class="membro">
+                <img src="imgs/user-happy.png" alt="Arquiteto Chefe">
+                <div class="membro-info">
+                    <h4>Marina Costa</h4>
+                    <p>Arquiteta Chefe</p>
+                </div>
+            </div>
+            <div class="membro">
+                <img src="imgs/user-happy.png" alt="Gerente de Projetos">
+                <div class="membro-info">
+                    <h4>Roberto Santos</h4>
+                    <p>Gerente de Projetos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-box">
+                    <h3>WStudio</h3>
+                    <p>Realizando sonhos através de espaços únicos e aconchegantes.</p>
+                </div>
+                <div class="footer-box">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="tipos-de-casa.html">Tipos de Casa</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-box">
+                    <h3>Contato</h3>
+                    <p>contato@wstudio.com</p>
+                    <p>(11) 99999-9999</p>
+                    <div class="social-icons">
+                        <span>Instagram</span> | <span>Facebook</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 WStudio. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
